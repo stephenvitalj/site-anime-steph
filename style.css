@@ -1,0 +1,189 @@
+/* Styles généraux */
+body #background-video {
+    position: fixed; /* Se positionne par rapport à la fenêtre */
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100; /* Place la vidéo derrière tout le reste du contenu */
+    object-fit: cover; /* Assure que la vidéo couvre l'espace sans se déformer */
+}
+.section-avec-parallax {
+    background-image: url('rt.jpg');
+    min-height: 400px; /* Hauteur de la section */
+    background-attachment: fixed; /* Clé de l'effet parallax simple */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; /* Pour superposer du contenu si besoin */
+}
+/* Assurez-vous que le contenu principal a un fond pour être lisible */
+body {
+    /* ... vos autres styles body ... */
+    /* S'il y avait un background-image, retirez-le ou commentez-le */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Commence un peu plus bas */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+main, header, nav, footer { /* Assurez-vous que ces éléments ne sont pas transparents */
+    position: relative; /* Nécessaire pour que z-index fonctionne correctement sur les enfants */
+    z-index: 1; /* Place le contenu au-dessus de la vidéo */
+}
+main {
+     background-color: rgba(255, 255, 255, 0.8); /* Exemple de fond semi-transparent pour la lisibilité */
+}
+/* Vous pourriez avoir besoin d'ajuster les couleurs de texte sur header/nav/footer aussi */
+header, footer {
+    background-color: rgba(51, 51, 51, 0.7); /* Fond semi-transparent pour header/footer */
+}
+nav {
+    background-color: rgba(68, 68, 68, 0.8); /* Fond semi-transparent pour nav */
+}
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+        background-image: url('principa.jpg');    background-size: cover; /
+    background-position: center center; /    background-attachment: fixed;    background-repeat: no-repeat; /
+    color: #333; /    line-height: 1.6;
+}.banniere-section {
+    height: 50vh; /* 50% de la hauteur de la fenêtre */
+    background-image: url('image-banniere-action.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Pour centrer le texte */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.banniere-section h2 {
+    font-size: 3rem;
+    background-color: rgba(0,0,0,0.5); /* Fond semi-transparent pour le texte */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background: #444;
+    padding: 0.5rem;
+    text-align: center; /* Centrer les éléments de la nav */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Retirer la marge par défaut de ul */
+    display: inline-block; /* Permet de centrer la liste */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #f0a500; /* Couleur de survol */
+}
+
+main {
+    padding: 20px;
+    max-width: 900px; /* Limiter la largeur pour une meilleure lisibilité */
+    margin: 20px auto; /* Centrer le contenu principal */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #f0a500; /* Ligne sous les titres h2 */
+    padding-bottom: 5px;
+}
+
+/* Styles pour la liste d'animés */
+.anime-list {
+    padding: 10px;
+}
+
+.anime-entry {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.anime-entry h3 {
+    margin-top: 0;
+    color: #0056b3; /* Couleur pour les titres d'animés */
+}
+
+.anime-cover {
+    max-width: 150px;
+    height: auto;
+    float: left; /* Faire flotter l'image à gauche */
+    margin-right: 15px; /* Espace entre l'image et le texte */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Clearfix pour que le conteneur .anime-entry englobe l'image flottante */
+.anime-entry::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 30px;
+}
+
+/* Responsive (très basique) */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .anime-cover {
+        float: none; /* Empêcher l'image de flotter sur petits écrans */
+        display: block;
+        margin: 0 auto 10px auto; /* Centrer l'image */
+    }
+} 
